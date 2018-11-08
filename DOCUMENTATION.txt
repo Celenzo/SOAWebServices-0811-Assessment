@@ -1,0 +1,24 @@
+installation: npm install
+
+deploy: npm start
+
+The app will be running on http://localhost:4200
+
+Apis Used:
+
+JSON: Firebase Storage: For file upload
+      Uses google connection
+JSON: Dropbox : File storage
+      Uses a dropbox developer access token
+JSON: Box : File storage
+      Uses a box developer access token, needs to be regenerated every hour.
+XML: hec.su: Url shortener
+     No auth
+
+When the app is deployed, data is automatically fetched from Dropbox and Box, and the files are listed.
+
+There will also be a prompt for Firebase authentification, and when connected, the user has access to the file upload input that allows him to upload on firebase.
+
+Clicking on the share button of a Dropbox or Box file will display (after a short latency due to the hec.su call) a long URL and a shortened version of that url to access the file in sharing mode (the link is public).
+
+Most of the APIs are not fully implemented and the project does not corresponds to what the app should actually be due to various important issues encountered while trying to use the google api.

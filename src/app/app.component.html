@@ -1,0 +1,26 @@
+<firebase-ui
+    (signInSuccessWithAuthResult)="successCallback($event)"
+    (signInFailure)="errorCallback($event)"></firebase-ui>
+
+<input type="file" (change)="uploadFirebase($event)" />
+
+<div>
+    <a target="_blank" href="{{ shareLongUrl }}">{{ shareLongUrl }}</a>
+</div>
+<div>
+    <a target="_blank" href="{{ shareShortUrl }}">{{ shareShortUrl }}</a>
+</div>
+
+<div class="box-wrapper">
+    <div *ngFor="let boxFile of boxFiles">
+        <p (click)="openBoxFolder(boxFile)">{{ boxFile.name }}</p>
+        <button *ngIf="boxFile.type != 'folder'" (click)="boxShare(boxFile)">Share</button>
+    </div>
+</div>
+
+<div class="dropbox-wrapper">
+    <div *ngFor="let dropboxFile of dropboxFiles">
+        <p>{{ dropboxFile.name }}</p>
+        <button (click)="dropboxShare(dropboxFile)">Share</button>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+{
+  "/shrtn": {
+    "target": "https://hec.su/",
+    "secure": false,
+    "pathRewrite": {
+        "^/shrtn": ""
+    },
+    "changeOrigin": true
+  }
+}
